@@ -19,7 +19,7 @@ To install
     cabal-install (or cabal-meta install)
 
 
-An example
+An example (./examples/simple.hs)
 ---------------------
     $ ./dist/build/simple/simple 1 2 3 4 5
     request: "*5\r\n$1\r\n1\r\n$1\r\n2\r\n$1\r\n3\r\n$1\r\n4\r\n$1\r\n5\r\n"
@@ -27,6 +27,20 @@ An example
 
     $ for i in `seq 1 10000`; do echo $i; done | xargs ./dist/build/simple/simple
     ...
+
+Building requests
+---------------------
+    import Protocol.RESP (request)
+    ...
+    request ["KEYS","*"]
+
+Parsing replies
+---------------------
+    import Protocol.RESP (request, reply)
+    ...
+    reply $ request ["redis","serialization","protocol"]
+    <todo:add a variant to reply which parses Reply (wrapper similar to reply)>
+
 The repl
 ---------------------
     cabal repl
