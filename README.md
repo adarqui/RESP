@@ -14,9 +14,9 @@ In case we want to use RESP without redis. Also, to showcase this beast RESP par
 
 To install
 ---------------------
-git clone https://github.com/adarqui/RESP
-cabal sandbox init
-cabal-install (or cabal-meta install)
+    git clone https://github.com/adarqui/RESP
+    cabal sandbox init
+    cabal-install (or cabal-meta install)
 
 
 An example
@@ -29,12 +29,12 @@ An example
     ...
 The repl
 ---------------------
-cabal repl
+    cabal repl
 
 
 Benchmarks
 ---------------------
-cabal bench
+    cabal bench
 
 
 Tests
