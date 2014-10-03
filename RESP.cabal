@@ -15,13 +15,13 @@ library
    Protocol.RESP
    Protocol.RESP.Include
    Protocol.RESP.Internal
-  build-depends:       base ==4.7.*, bytestring ==0.10.4.0, attoparsec ==0.11.3.4, criterion ==0.8.1.0
+  build-depends:       base >= 4.6, bytestring, attoparsec, criterion
   GHC-Options:         -Wall -rtsopts
   hs-source-dirs:      src
 
 executable "simple"
   main-is:             simple.hs
-  build-depends:       base ==4.7.*, bytestring ==0.10.4.0, attoparsec ==0.11.3.4, RESP
+  build-depends:       base >= 4.6, bytestring, RESP
   GHC-Options:         -O2 -Wall -rtsopts -auto-all
   hs-source-dirs:      examples
 
@@ -29,5 +29,5 @@ benchmark resp-bench
   type:             exitcode-stdio-1.0
   hs-source-dirs:   src, bench
   main-is:          Suite.hs
-  build-depends:    base ==4.7.*, bytestring ==0.10.4.0, attoparsec ==0.11.3.4, criterion ==0.8.1.0, RESP
+  build-depends:    base >= 4.6, bytestring, attoparsec, criterion, RESP
   ghc-options:      -O2 -Wall -rtsopts
